@@ -40,7 +40,6 @@ const BASE_QUESTIONS = [
   */
 
   // ✅ Your NEW questions start here
-  ,
   {
     id: "q_truth_or_lie",
     optionA: "Know every truth about the world",
