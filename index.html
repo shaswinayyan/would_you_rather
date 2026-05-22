@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Would You Rather? • Premium Edition</title>
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="An interactive, premium single-page Would You Rather game with friends, featuring custom questions, stats tracking, and a Duo compatibility mode.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Orbs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+        </svg>
+        <h1>Would You <span class="gradient-text">Rather?</span></h1>
+      </div>
+      
+      <!-- Top Actions / Settings -->
+      <div class="header-actions">
+        <button id="soundToggleBtn" class="icon-btn" aria-label="Toggle Sound" title="Toggle Sound">
+          <svg id="soundOnIcon" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="soundOffIcon" class="icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+        <button id="themeToggleBtn" class="icon-btn" aria-label="Change Theme" title="Change Theme">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            <circle cx="12" cy="12" r="5"></circle>
+          </svg>
+        </button>
+        <button id="resetGameBtn" class="icon-btn" aria-label="Reset Progress" title="Reset Progress">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <polyline points="3 3 3 8 8 8"></polyline>
+          </svg>
+        </button>
+        <button id="openCreatorBtn" class="btn btn-primary btn-sm flex-center">
+          <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Question
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation / Mode Tabs -->
+    <nav class="mode-navigation">
+      <div class="nav-tabs">
+        <button id="modeClassicBtn" class="tab-btn active" data-mode="classic">
+          <span>Solo Play</span>
+        </button>
+        <button id="modeDuoBtn" class="tab-btn" data-mode="duo">
+          <span>Duo Party</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Filter and Category Selector (Only in Classic Mode) -->
+      <section id="gameFilters" class="game-filters animate-fade-in">
+        <div class="category-pills">
+          <button class="pill active" data-category="all">All</button>
+          <button class="pill" data-category="social">Silly & Social</button>
+          <button class="pill" data-category="tech">Career & Tech</button>
+          <button class="pill" data-category="deep">Deep Choices</button>
+          <button class="pill" data-category="custom">Custom Added</button>
+        </div>
+      </section>
+
+      <!-- Duo Setup Screen (Hidden initially) -->
+      <section id="duoSetupScreen" class="duo-setup glass-card hidden animate-scale-up">
+        <h2>Duo Compatibility Mode</h2>
+        <p class="subtitle">Take turns selecting your choices to measure your interpersonal alignment!</p>
+        
+        <div class="setup-inputs">
+          <div class="input-group">
+            <label for="player1Input">Player 1 Name</label>
+            <input type="text" id="player1Input" placeholder="Enter Player 1 Name" value="Player A">
+          </div>
+          <div class="input-group">
+            <label for="player2Input">Player 2 Name</label>
+            <input type="text" id="player2Input" placeholder="Enter Player 2 Name" value="Player B">
+          </div>
+        </div>
+
+        <button id="startDuoBtn" class="btn btn-gradient btn-lg">Start Duo Match</button>
+      </section>
+
+      <!-- Duo Turn Transition Screen (Hidden initially) -->
+      <section id="duoTurnScreen" class="duo-turn glass-card hidden animate-scale-up">
+        <div class="avatar-turn-indicator">
+          <div id="playerAvatar" class="avatar">A</div>
+        </div>
+        <h2 id="turnInstruction">Player A, your turn!</h2>
+        <p class="subtitle">Answer honestly. Your partner won't see your choice until both have voted.</p>
+        <button id="proceedToVoteBtn" class="btn btn-gradient">Vote Secretly</button>
+      </section>
+
+      <!-- Duo Score Screen / Compatibility Report (Hidden initially) -->
+      <section id="duoResultsScreen" class="duo-results glass-card hidden animate-scale-up">
+        <h2>Duo Match Complete!</h2>
+        <div class="score-radial">
+          <svg class="radial-svg" viewBox="0 0 120 120">
+            <circle class="bg-circle" cx="60" cy="60" r="50"></circle>
+            <circle id="scoreProgress" class="progress-circle" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"></circle>
+          </svg>
+          <div class="score-text">
+            <span id="compatibilityPercent" class="percent">0%</span>
+            <span class="label">Matched</span>
+          </div>
+        </div>
+        
+        <h3 id="compatibilityTitle">Testing Connection...</h3>
+        <p id="compatibilityDesc" class="subtitle">Checking shared viewpoints.</p>
+
+        <div class="duo-actions">
+          <button id="restartDuoBtn" class="btn btn-gradient">Play Again</button>
+          <button id="exitDuoBtn" class="btn btn-outline">Back to Solo</button>
+        </div>
+      </section>
+
+      <!-- Deck Completion Screen (Hidden initially) -->
+      <section id="deckCompletionScreen" class="deck-completion glass-card hidden animate-scale-up">
+        <div class="completion-badge">🎉</div>
+        <h2>All Caught Up!</h2>
+        <p class="subtitle">You have answered all questions in this category. Here is a summary of your choices:</p>
+        
+        <!-- Summary list of answered questions -->
+        <div class="answers-summary-list" id="answersSummaryList">
+          <!-- Dynamically populated in app.js -->
+        </div>
+
+        <div class="completion-actions mt-3">
+          <button id="restartDeckBtn" class="btn btn-gradient btn-lg">Reset & Play Again</button>
+        </div>
+      </section>
+
+      <!-- Gameplay Board -->
+      <section id="gameplayBoard" class="game-board">
+        <div class="question-header">
+          <div class="header-meta">
+            <span class="question-tag" id="questionCategory">Category: Silly & Social</span>
+            <span class="classic-progress-text" id="classicProgressNum">Question 1 / 12</span>
+          </div>
+          <div class="classic-progress-bar">
+            <div class="classic-progress-fill" id="classicProgressFill"></div>
+          </div>
+          <h2 class="question-title">Would You Rather...</h2>
+        </div>
+
+        <div class="options-container" id="optionsContainer">
+          
+          <!-- Option A Card -->
+          <div class="option-card option-left" id="optionCardA" tabindex="0" role="button">
+            <div class="option-glow"></div>
+            <div class="option-content">
+              <p class="option-text" id="optionTextA">Be the smartest person on a mediocre team</p>
+              
+              <!-- Results Stats -->
+              <div class="option-stats hidden">
+                <span class="percentage" id="percentA">58%</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill" id="barFillA"></div>
+                </div>
+                <span class="vote-count" id="votesA">1,240 votes</span>
+              </div>
+            </div>
+            
+            <div class="choice-badge top-left hidden" id="choiceBadgeA">Picked</div>
+            <div class="partner-badge top-right hidden" id="partnerBadgeA">Player A</div>
+          </div>
+
+          <!-- The Floating OR Node -->
+          <div class="or-separator" id="orNode">
+            <span>OR</span>
+          </div>
+
+          <!-- Option B Card -->
+          <div class="option-card option-right" id="optionCardB" tabindex="0" role="button">
+            <div class="option-glow"></div>
+            <div class="option-content">
+              <p class="option-text" id="optionTextB">Be the weakest person on a brilliant team?</p>
+              
+              <!-- Results Stats -->
+              <div class="option-stats hidden">
+                <span class="percentage" id="percentB">42%</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill" id="barFillB"></div>
+                </div>
+                <span class="vote-count" id="votesB">912 votes</span>
+              </div>
+            </div>
+
+            <div class="choice-badge top-left hidden" id="choiceBadgeB">Picked</div>
+            <div class="partner-badge top-right hidden" id="partnerBadgeB">Player B</div>
+          </div>
+
+        </div>
+
+        <!-- Classic Control Actions -->
+        <div id="classicControls" class="classic-controls flex-center mt-3 hidden">
+          <button id="nextQuestionBtn" class="btn btn-gradient btn-lg flex-center">
+            Next Question
+            <svg class="icon-sm ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Duo HUD Status -->
+        <div id="duoHUD" class="duo-hud hidden">
+          <div class="hud-stat">
+            <span class="label">Match Progress:</span>
+            <span id="duoQuestionNum" class="val">1 / 5</span>
+          </div>
+          <div class="hud-stat">
+            <span class="label">Agreed:</span>
+            <span id="duoAgreements" class="val">0</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Stats Bar Dashboard -->
+      <section id="statsDashboard" class="stats-dashboard glass-card animate-fade-in">
+        <div class="stat-item">
+          <span class="stat-number" id="statsTotalVoted">0</span>
+          <span class="stat-label">Total Choices Made</span>
+        </div>
+        <div class="stat-item border-x">
+          <span class="stat-number" id="statsMatchRate">0%</span>
+          <span class="stat-label">Majority Agreement</span>
+        </div>
+        <div class="stat-item">
+          <div class="streak-container">
+            <span class="stat-number" id="statsStreak">0</span>
+            <span class="streak-fire hidden" id="streakFire">🔥</span>
+          </div>
+          <span class="stat-label">Agreement Streak</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Modal for Question Custom Creator -->
+    <div id="creatorModal" class="modal-overlay hidden">
+      <div class="modal-container glass-card animate-scale-up">
+        <div class="modal-header">
+          <h2>Create A Question</h2>
+          <button id="closeCreatorBtn" class="close-btn" aria-label="Close Creator Modal">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <form id="customQuestionForm" class="modal-form">
+          <div class="form-group">
+            <label for="customOptA">Option A ("Would you rather...")</label>
+            <textarea id="customOptA" placeholder="Be the smartest person on a mediocre team" required maxlength="120"></textarea>
+          </div>
+          
+          <div class="form-or">
+            <span>OR</span>
+          </div>
+
+          <div class="form-group">
+            <label for="customOptB">Option B</label>
+            <textarea id="customOptB" placeholder="Be the weakest person on a brilliant team?" required maxlength="120"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="customCategory">Category</label>
+            <select id="customCategory" required>
+              <option value="social">Silly & Social</option>
+              <option value="tech">Career & Tech</option>
+              <option value="deep">Deep Choices</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-gradient btn-full">Add To Card Deck</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Alert Toast -->
+  <div id="toastNotification" class="toast hidden">
+    <span id="toastMessage">Success message here!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
