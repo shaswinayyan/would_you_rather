@@ -19,6 +19,14 @@ const BASE_QUESTIONS = [
     votesB: 2410
   },
   {
+    id: "q_truth_or_lie",
+    optionA: "Know every truth about the world",
+    optionB: "Live happily in a beautiful lie?",
+    category: "deep",
+    votesA: 4200,
+    votesB: 3900
+  },
+  {
     id: "q_linkedin_instagram",
     optionA: "Get caught stalking someone’s LinkedIn profile",
     optionB: "Get caught liking their 2017 Instagram post?",
