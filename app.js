@@ -5,7 +5,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_smart_weak",
     optionA: "Be the smartest person on a mediocre team",
-    optionB: "Be the weakest person on a brilliant team?",
+    optionB: "Be the weakest person on a brilliant team",
     category: "tech",
     votesA: 3412,
     votesB: 4280
@@ -13,7 +13,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_crush_whatsapp",
     optionA: "Accidentally like your crush’s photo from 2019",
-    optionB: "Send a voice note singing badly to the office WhatsApp group?",
+    optionB: "Send a voice note singing badly to the office WhatsApp group",
     category: "social",
     votesA: 5940,
     votesB: 2410
@@ -22,7 +22,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_manager_chatgpt_reels",
     optionA: "Let your manager read your last 30 days of ChatGPT/Gemini conversations",
-    optionB: "Let your manager see every reel you’ve liked in the last 6 months?",
+    optionB: "Let your manager see every reel you’ve liked in the last 6 months",
     category: "tech",
     votesA: 2890,
     votesB: 3512
@@ -43,7 +43,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_truth_or_lie",
     optionA: "Know every truth about the world",
-    optionB: "Live happily in a beautiful lie?",
+    optionB: "Live happily in a beautiful lie",
     category: "deep",
     votesA: 4200,
     votesB: 3900
@@ -51,7 +51,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_job_love_money",
     optionA: "Have a job you love that pays enough",
-    optionB: "Have a job you hate that gives you total financial freedom?",
+    optionB: "Have a job you hate that gives you total financial freedom",
     category: "deep",
     votesA: 5300,
     votesB: 4700
@@ -59,7 +59,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_linkedin_instagram",
     optionA: "Get caught stalking someone’s LinkedIn profile",
-    optionB: "Get caught liking their 2017 Instagram post?",
+    optionB: "Get caught liking their 2017 Instagram post",
     category: "social",
     votesA: 3105,
     votesB: 4890
@@ -67,7 +67,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_hair_teeth",
     optionA: "Lose all of your hair",
-    optionB: "Lose all of your teeth?",
+    optionB: "Lose all of your teeth",
     category: "social",
     votesA: 6100,
     votesB: 2800
@@ -75,7 +75,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_brothers_sisters",
     optionA: "Have 10 brothers",
-    optionB: "Have 10 sisters?",
+    optionB: "Have 10 sisters",
     category: "fun",
     votesA: 3900,
     votesB: 4100
@@ -83,7 +83,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_attractive_intelligent",
     optionA: "Be in the top 1% attractiveness in the world",
-    optionB: "Be in the top 10% of intelligence in the world?",
+    optionB: "Be in the top 10% of intelligence in the world",
     category: "deep",
     votesA: 3500,
     votesB: 6200
@@ -91,7 +91,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_forehead_tattoo",
     optionA: "Have your name tattooed on your forehead",
-    optionB: "Have no front teeth?",
+    optionB: "Have no front teeth",
     category: "social",
     votesA: 2200,
     votesB: 6100
@@ -99,7 +99,7 @@ const BASE_QUESTIONS = [
   {
     id: "q_dream_vs_people",
     optionA: "Have your biggest dream come true but lose someone you care about",
-    optionB: "Keep everyone you love but never achieve your dream?",
+    optionB: "Keep everyone you love but never achieve your dream",
     category: "deep",
     votesA: 1800,
     votesB: 7900
@@ -107,15 +107,15 @@ const BASE_QUESTIONS = [
   {
     id: "q_die_way_year",
     optionA: "Pick the way you die",
-    optionB: "Pick the year you die?",
+    optionB: "Pick the year you die",
     category: "deep",
     votesA: 4700,
     votesB: 4200
   },
   {
     id: "q_video_choice",
-    optionA: "Watch a conspiracy explanation video about an exam leak",
-    optionB: "Watch Dora the Explorer in a loop for 24 hours?",
+    optionA: "watch Durandhar 3 explaining how ISIS is responsible for NEET 2026 question paper leak",
+    optionB: "Watch Dora the Explorer in a loop for 24 hours",
     category: "fun",
     votesA: 2600,
     votesB: 5400
