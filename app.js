@@ -18,14 +18,7 @@ const BASE_QUESTIONS = [
     votesA: 5940,
     votesB: 2410
   },
-  {
-    id: "q_linkedin_instagram",
-    optionA: "Get caught stalking someone’s LinkedIn profile",
-    optionB: "Get caught liking their 2017 Instagram post?",
-    category: "social",
-    votesA: 3105,
-    votesB: 4890
-  },
+  
   {
     id: "q_manager_chatgpt_reels",
     optionA: "Let your manager read your last 30 days of ChatGPT/Gemini conversations",
@@ -63,6 +56,14 @@ const BASE_QUESTIONS = [
     category: "deep",
     votesA: 5300,
     votesB: 4700
+  },
+  {
+    id: "q_linkedin_instagram",
+    optionA: "Get caught stalking someone’s LinkedIn profile",
+    optionB: "Get caught liking their 2017 Instagram post?",
+    category: "social",
+    votesA: 3105,
+    votesB: 4890
   },
   {
     id: "q_hair_teeth",
