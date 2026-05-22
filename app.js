@@ -18,44 +18,6 @@ const BASE_QUESTIONS = [
     votesA: 5940,
     votesB: 2410
   },
-  
-  {
-    id: "q_manager_chatgpt_reels",
-    optionA: "Let your manager read your last 30 days of ChatGPT/Gemini conversations",
-    optionB: "Let your manager see every reel you’ve liked in the last 6 months?",
-    category: "tech",
-    votesA: 2890,
-    votesB: 3512
-  },
-
-  // ❌ Commented questions
-  /*
-  { id: "q_superpower_sleep", ... },
-  { id: "q_comic_sans_slack", ... },
-  { id: "q_immortality_disease", ... },
-  { id: "q_always_late_early", ... },
-  { id: "q_shadow_stream", ... },
-  { id: "q_teleport_naked_fly", ... },
-  { id: "q_high_toxic_low_happy", ... }
-  */
-
-  // ✅ Your NEW questions start here
-  {
-    id: "q_truth_or_lie",
-    optionA: "Know every truth about the world",
-    optionB: "Live happily in a beautiful lie?",
-    category: "deep",
-    votesA: 4200,
-    votesB: 3900
-  },
-  {
-    id: "q_job_love_money",
-    optionA: "Have a job you love that pays enough",
-    optionB: "Have a job you hate that gives you total financial freedom?",
-    category: "deep",
-    votesA: 5300,
-    votesB: 4700
-  },
   {
     id: "q_linkedin_instagram",
     optionA: "Get caught stalking someone’s LinkedIn profile",
@@ -65,63 +27,78 @@ const BASE_QUESTIONS = [
     votesB: 4890
   },
   {
-    id: "q_hair_teeth",
-    optionA: "Lose all of your hair",
-    optionB: "Lose all of your teeth?",
+    id: "q_manager_chatgpt_reels",
+    optionA: "Let your manager read your last 30 days of ChatGPT/Gemini conversations",
+    optionB: "Let your manager see every reel you’ve liked in the last 6 months?",
+    category: "tech",
+    votesA: 2890,
+    votesB: 3512
+  },
+  {
+    id: "q_superpower_sleep",
+    optionA: "Wake up with a random useless superpower every day (e.g. heating milk by staring)",
+    optionB: "Have an incredible superpower (like flight) but it only works while sleeping?",
     category: "social",
-    votesA: 6100,
-    votesB: 2800
+    votesA: 4802,
+    votesB: 3911
   },
   {
-    id: "q_brothers_sisters",
-    optionA: "Have 10 brothers",
-    optionB: "Have 10 sisters?",
-    category: "fun",
-    votesA: 3900,
-    votesB: 4100
+    id: "q_comic_sans_slack",
+    optionA: "Write all professional emails in lowercase Comic Sans",
+    optionB: "Use an exclamation mark at the end of every Slack/Teams sentence!",
+    category: "tech",
+    votesA: 2980,
+    votesB: 5410
   },
   {
-    id: "q_attractive_intelligent",
-    optionA: "Be in the top 1% attractiveness in the world",
-    optionB: "Be in the top 10% of intelligence in the world?",
+    id: "q_immortality_disease",
+    optionA: "Discover the secret to immortality but you can never share it with anyone",
+    optionB: "Discover a cure for all diseases but your name is completely erased from history?",
     category: "deep",
-    votesA: 3500,
-    votesB: 6200
+    votesA: 1845,
+    votesB: 7120
   },
   {
-    id: "q_forehead_tattoo",
-    optionA: "Have your name tattooed on your forehead",
-    optionB: "Have no front teeth?",
+    id: "q_lie_truth",
+    optionA: "Live in a world where everyone instantly knows when you tell a lie",
+    optionB: "Live in a world where everyone says exactly what they are thinking out loud?",
+    category: "deep",
+    votesA: 4120,
+    votesB: 3950
+  },
+  {
+    id: "q_always_late_early",
+    optionA: "Always be 15 minutes late to everything you attend",
+    optionB: "Always be 45 minutes early to everything you attend?",
     category: "social",
-    votesA: 2200,
-    votesB: 6100
+    votesA: 3110,
+    votesB: 5930
   },
   {
-    id: "q_dream_vs_people",
-    optionA: "Have your biggest dream come true but lose someone you care about",
-    optionB: "Keep everyone you love but never achieve your dream?",
-    category: "deep",
-    votesA: 1800,
-    votesB: 7900
+    id: "q_shadow_stream",
+    optionA: "Have your manager shadow you, looking over your shoulder for a full week",
+    optionB: "Have your work screen live-streamed to the entire department for a day?",
+    category: "tech",
+    votesA: 2190,
+    votesB: 4720
   },
   {
-    id: "q_die_way_year",
-    optionA: "Pick the way you die",
-    optionB: "Pick the year you die?",
-    category: "deep",
-    votesA: 4700,
-    votesB: 4200
+    id: "q_teleport_naked_fly",
+    optionA: "Be able to teleport anywhere instantly but arrive completely naked",
+    optionB: "Be able to fly but only at a maximum speed of 10 miles per hour?",
+    category: "social",
+    votesA: 3560,
+    votesB: 4120
   },
   {
-    id: "q_video_choice",
-    optionA: "Watch a conspiracy explanation video about an exam leak",
-    optionB: "Watch Dora the Explorer in a loop for 24 hours?",
-    category: "fun",
-    votesA: 2600,
-    votesB: 5400
+    id: "q_high_toxic_low_happy",
+    optionA: "Work a high-stress 70-hour week with a toxic team but double the industry salary",
+    optionB: "Work a standard 35-hour week with a wonderful team but barely making minimum wage?",
+    category: "tech",
+    votesA: 1450,
+    votesB: 8320
   }
 ];
-
 
 // ==========================================
 // AUDIO SYNTHESIZER MODULE (Web Audio API)
